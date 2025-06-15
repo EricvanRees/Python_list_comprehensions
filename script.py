@@ -102,6 +102,10 @@ categories = [
 print(categories)
 """
 
+"""
+Example 6: Nested list comprehension
+"""
+
 import pprint
 printer = pprint.PrettyPrinter()
 
@@ -126,7 +130,7 @@ lst = []
 # printer.pprint(lst)
 
 """
-Example 6: Transformation in Comprehension
+Example 7: Transformation in Comprehension
 """
 # List comp with functions
 
@@ -135,4 +139,38 @@ def square(x):
     return x**2
 
 
+# apply a function to a value inside a list comprehension
 squared_numbers = [square(x) for x in range(10)]
+
+"""
+Example 8: Dictionary comprehension
+"""
+
+# Creating a dictionary
+pairs = [("a", 1), ("b", 2), ("c", 3)]
+# dictionary comprehension
+my_dict = {k: v for k, v in pairs}
+print(my_dict)
+
+"""
+Example 9: Set comprehension
+Removing duplicates from a list while applying a function.
+"""
+
+nums = [1, 2, 2, 3, 3, 4, 4, 4, 4]
+# python knows this is a set comprehension
+# if you don't have any key inside it:
+unique_squares = {x**2 for x in nums}
+
+"""
+Example 10: Generator comprehension
+A generator returns a value when needed,
+gives the next value when asked for it
+and is generated on the fly.
+"""
+# sum asks for each value sequentially and adds it to a sum that it's strong internally
+# this is the generator comprehension: x**2 for x in range(1000000)
+sum_of_squares = sum(x**2 for x in range(1000000))
+# this uses a list and generates every possible value :
+# sum_of_squares = sum([x**2 for x in range(1000000)])
+print(sum_of_squares)
