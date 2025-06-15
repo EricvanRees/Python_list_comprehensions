@@ -81,8 +81,8 @@ print(flattened)
 """
 
 """
-If/Else In A Comprehension
-"""
+Example 5: If/Else In A Comprehension
+
 # Categorize numbers as even or odd
 categories = []
 
@@ -93,3 +93,46 @@ for number in range(10):
         categories.append("Odd")
 
 print(categories)
+
+# list comprehension with if/else:
+categories = [
+    "Even" if x % 2 == 0 else "Odd" for x in range(10)
+]
+
+print(categories)
+"""
+
+import pprint
+printer = pprint.PrettyPrinter()
+
+lst = []
+# builds a 5x5x5 matrix or 3D list
+""" for a in range(5):
+    l1 = []
+    for b in range(5):
+        l2 = []
+        for num in range(5):
+            l2.append(num)
+        l1.append(l2)
+
+    lst.append(l1) """
+
+# this is what gets added inside of the list [[num for num in range(5)] for _ in range(5)]
+# this tells Python the output is 5 lists with the numbers 0 through 4: [num for num in range(5)]
+# this tells Python you will repeat this process times - for _ in range(5)
+# the final list comprehension:
+# lst = [[[num for num in range(5)] for _ in range(5)] for _ in range(5)]
+
+# printer.pprint(lst)
+
+"""
+Example 6: Transformation in Comprehension
+"""
+# List comp with functions
+
+
+def square(x):
+    return x**2
+
+
+squared_numbers = [square(x) for x in range(10)]
